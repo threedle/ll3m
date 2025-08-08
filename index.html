@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LL3M: Large Language 3D Modelers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="icon" type="image/png" href="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/pineapple-icon-144.png"> -->
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    /* from https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css */
+    @font-face {
+      font-family: 'Academicons';
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src: url('https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/fonts/academicons.eot') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/fonts/academicons.ttf') format('truetype'),
+        url('https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/fonts/academicons.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/fonts/academicons.svg') format('svg');
+    }
+
+    .ai {
+      font-family: 'Academicons';
+      font-weight: 400;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+
+    .ai-arxiv:before {
+      content: "\e974";
+    }
+  </style>
+
+  <meta name="description" content="LL3M: Large Language 3D Modelers">
+  <meta name="keywords" content="geometry, graphics, 3d, shape, generative, llm, ll3m, blender">
+  <meta property='og:title' content='LL3M: Large Language 3D Modelers' />
+  <meta property='og:url' content='https://threedle.github.io/ll3m/' />
+  <!-- <meta property='og:image'
+    content='https://raw.githubusercontent.com/threedle/geometry-in-style/refs/heads/main/https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/teaser.png' /> -->
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <section class="intro" aria-label="intro">
+    <a href="https://3dl.cs.uchicago.edu" aria-label="3DL threedle home">
+      <div class="logobox">
+        <img
+          src="https://threedle.github.io/geometry-in-style/assets/threedle-icon-160.png"
+          alt="3DL threedle logo">
+      </div>
+    </a>
+    <div class="titlebox">
+      <h1>LL3M: Large Language 3D&nbsp;Modelers</h1>
+    </div>
+    <nav>
+      <a target="_blank" href="#" aria-label="paper pdf"><i class="icon fas fa-file-pdf"></i>Paper</a>
+      <a target="_blank" href="#"><i class="icon ai ai-arxiv"></i>arXiv</a>
+      <a target="_blank" href="https://github.com/threedle/ll3m/" aria-label="code github"><i
+          class="icon fab fa-github"></i>Code</a>
+      <!-- <a href="#bibtex">BibTeX</a> -->
+    </nav>
+    <div class="authors" aria-label="authors">
+      <span><a href="#">Sining Lu</a>*</span>
+      <span><a href="#">Guan Chen</a>*</span>
+      <span><a href="https://people.cs.uchicago.edu/~namanh/">Nam Anh Dinh</a></span>
+      <span><a href="https://itailang.github.io/">Itai Lang</a></span>
+      <span><a href="https://ariholtzman.com/">Ari Holtzman</a></span>
+      <span><a href="https://people.cs.uchicago.edu/~ranahanocka/">Rana Hanocka</a></span>
+    </div>
+    <div class="affiliations" aria-label="affiliations">University of Chicago</div>
+  </section>
+  <section class="teaser" aria-label="teaser">
+    <img class="fullwidth blcent" src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig0-teaser.jpg"
+      alt="teaser figure:">
+    <p class="graybox">
+      <b>LL3M uses a team of large language models to write Python code that creates and edits 3D assets in Blender.</b>
+      Given user text instructions, the agents are capable of creating expressive shapes from scratch, and realizing
+      complex, precise geometric manipulations in code.
+
+      Whereas previous uses of code-writing LLMs for 3D creation have focused on specific subtasks or constrained
+      procedural programs and primitives, our method is able to create unconstrained assets with geometry, layout, and
+      appearance.
+
+      Enabled by high-level code as a 3D representation, our pipeline is natively a loop of iterative refinement and
+      co-creation: agents perform automatic code and visual self-critique, and users can provide continuous high-level
+      feedback. Further editing avenues are enabled by the clear code and the parameters transparent in the generated
+      Blender nodes and structures.
+    </p>
+  </section>
+  <section>
+    <h2>Pipeline overview</h2>
+    <img class="almosthalfwidthflex blcent"
+      src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig1-workflow.jpg" alt="process diagram">
+    <p class="graybox">
+      <b>Our method includes three phases</b>: initial creation, automatic refinement, and user-guided refinement. The
+      first
+      phase creates an initial shape, where implausible configurations, like a disconnected backrest, are
+      <em>automatically</em> corrected by the second phase. Afterwards, our system can accept additional edit
+      instructions from the user, allowing for <em>interactive</em> and <em>iterative</em> 3D asset generation.
+    </p>
+  </section>
+  <section>
+    <h2>Gallery</h2>
+    <img class="almostfullwidth blcent" src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig2-gallery.jpg"
+      alt="">
+    <p class="graybox">
+      <b>LL3M is capable of diverse shape generation</b>. The results showcase detailed parts (e.g. the guitar strings,
+      the windmill architectural features) in intricate arrangements (e.g. the piano keys), and even a rich appearance
+      (the skateboard) and material properties (the glossy lamp base). A notable feature of our approach is that each
+      mesh is generated through interpretable, editable Blender code.
+    </p>
+  </section>
+  <section>
+    <h2>Consistent stylization</h2>
+    <img class="almostfullwidth blcent"
+      src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig7-diff-in-same-out.jpg" alt="">
+    <p class="graybox">
+      <b>Consistent stylization.</b> Starting from different initial meshes produced by LL3M and the same
+      refinement prompt <em>change the style to steampunk</em> LL3M successfully interprets and applies the same
+      style concept to each hat. Each stylized mesh produces distinct variations, including both geometric modifications
+      and appearance changes.
+    </p>
+  </section>
+  <section>
+    <h2>Iterative creation</h2>
+    <div class="imgsflex">
+      <img class="almostfullwidth blcent"
+        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig22-humanoid.jpg" alt="">
+      <p class="fullwidth graybox">
+        <b>Iterative creation.</b> LL3M enables multiple successive edits of the same 3D asset. The
+        modifications are faithful to the user's instructions, editing only the specified element while preserving the
+        character's identity.
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>Interpretable code</h2>
+    <div class="imgsflex">
+      <img class="halfwidthflex blcent" src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig21-snippet.jpg"
+        alt="">
+      <p class="graybox">
+        <b>Interpretable code.</b> Our method generates Blender code that is easy to understand and follow. The code
+        is well-documented with descriptive comments, clear variable names, and structured logic. This interpretable
+        code makes it easy to potentially change variables (e.g. the key width) or even algorithmic logic (e.g. the
+        keyboard pattern).
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>Transparent parameters</h2>
+    <div class="imgsflex">
+      <img class="almosthalfwidthflex blcent"
+        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig6-interpretable-slider.jpg" alt="">
+      <p class="graybox">
+        By generating shapes through Blender code, LL3M allows intuitive user edits by virtue of the interpretable
+        parameters transparent in the code and in the generated Blender nodes and structures.
+        For example, when generating a material, our system creates a full set of shader nodes. Users can then
+        easily adjust visual attributes, such as tuning the color or stripe pattern directly in Blender to achieve the
+        desired output.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Scenes & hierarchies</h2>
+    <div class="imgsflex">
+      <img class="almosthalfwidthflex blcent"
+        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig13-scene.jpg">
+      <img class="almosthalfwidthflex blcent"
+        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig19-parenting.jpg">
+    </div>
+    <p class="graybox">
+      LL3M is capable of generating multiple objects and arranging them with appropriate spatial relationships
+      within a single scene. Our system achieves this task using complex operations such as instancing and parenting
+      relationships to build the scene hierarchy.
+      <br><br>
+      The coding agent can also use parenting for more complex single objects, such as a lamp, when explicitly prompted
+      to.
+      Doing so generates shapes with a human-readable hierarchical structure with parent-child
+      relationships between parts within the scene. This enables scene graph behavior in Blender, where transformations
+      applied to a parent propagate to its children. Each part in the graph is also assigned a meaningful semantic name.
+    </p>
+  </section>
+</body>
+
+</html>
