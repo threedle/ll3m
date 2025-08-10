@@ -5,7 +5,6 @@
   <title>LL3M: Large Language 3D Modelers</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="icon" type="image/png" href="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/pineapple-icon-144.png"> -->
   <link href="style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <style>
@@ -42,8 +41,6 @@
   <meta name="keywords" content="geometry, graphics, 3d, shape, generative, llm, ll3m, blender">
   <meta property='og:title' content='LL3M: Large Language 3D Modelers' />
   <meta property='og:url' content='https://threedle.github.io/ll3m/' />
-  <!-- <meta property='og:image'
-    content='https://raw.githubusercontent.com/threedle/geometry-in-style/refs/heads/main/https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/teaser.png' /> -->
   <meta property="og:type" content="website" />
 </head>
 
@@ -51,17 +48,16 @@
   <section class="intro" aria-label="intro">
     <a href="https://3dl.cs.uchicago.edu" aria-label="3DL threedle home">
       <div class="logobox">
-        <img
-          src="https://threedle.github.io/geometry-in-style/assets/threedle-icon-160.png"
-          alt="3DL threedle logo">
+        <img src="https://threedle.github.io/geometry-in-style/assets/threedle-icon-160.png" alt="3DL threedle logo">
       </div>
     </a>
     <div class="titlebox">
       <h1>LL3M: Large Language 3D&nbsp;Modelers</h1>
     </div>
     <nav>
-      <a target="_blank" href="#" aria-label="paper pdf"><i class="icon fas fa-file-pdf"></i>Paper</a>
-      <a target="_blank" href="#"><i class="icon ai ai-arxiv"></i>arXiv</a>
+      <a target="_blank" href="https://people.cs.uchicago.edu/~namanh/papers/ll3m-r1.pdf" aria-label="paper pdf"><i
+          class="icon fas fa-file-pdf"></i>Paper</a>
+      <a target="_blank" href="#"><i class="icon ai ai-arxiv"></i>arXiv (soon)</a>
       <a target="_blank" href="https://github.com/threedle/ll3m/" aria-label="code github"><i
           class="icon fab fa-github"></i>Code</a>
       <!-- <a href="#bibtex">BibTeX</a> -->
@@ -77,8 +73,61 @@
     <div class="affiliations" aria-label="affiliations">University of Chicago</div>
   </section>
   <section class="teaser" aria-label="teaser">
-    <img class="fullwidth blcent" src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig0-teaser.jpg"
-      alt="teaser figure:">
+    <!-- <img class="fullwidth blcent" src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig0-teaser.jpg"
+      alt="teaser figure:"> -->
+    <div class="absparent">
+      <figure class="abs vidloadsync">
+        <video class="srcshape" style="--lmul: 0" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-wizardhat1-compress.mp4.jpg"
+          preload muted loop playsinline aria-label="video of rotating purple wizard hat">
+          <source
+            src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/wizardhat1-compress.mp4"
+            type="video/mp4">
+        </video>
+        <video class="rsltshape" style="--lmul: 1.5" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-wizardhat2-compress.mp4.jpg"
+          preload muted loop playsinline
+          aria-label="video of rotating purple wizard hat, with a smiley face sculpted into it">
+          <source
+            src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/wizardhat2-compress.mp4"
+            type="video/mp4">
+        </video>
+      </figure>
+      <figure class="abs vidloadsync">
+        <video class="srcshape" style="--lmul: 3; --szmul: 1.3; --voffset: -9px;" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-lantern1-compress.mp4.jpg"
+          preload muted loop playsinline aria-label="video of rotating black cage-like empty lantern">
+          <source
+            src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/lantern1-compress.mp4"
+            type="video/mp4">
+        </video>
+        <video class="rsltshape" style="--lmul: 4.65; --szmul: 1.3; --voffset: -9px;" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-lantern2-compress.mp4.jpg"
+          preload muted loop playsinline
+          aria-label="video of rotating black cage-like lantern with a melting purple candle inside">
+          <source
+            src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/lantern2-compress.mp4"
+            type="video/mp4">
+        </video>
+      </figure>
+      <figure class="abs vidloadsync">
+        <video class="srcshape" style="--lmul: 6.5; --szmul: 1.01; --voffset: 1px;" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-fish1-compress.mp4.jpg"
+          preload muted loop playsinline aria-label="video of a rotating blue fish with a round body and small fins">
+          <source src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/fish1-compress.mp4"
+            type="video/mp4">
+        </video>
+        <video class="rsltshape" style="--lmul: 8.125; --szmul: 1.01; --voffset: 1px;" autoplay
+          poster="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/poster-fish2-compress.mp4.jpg"
+          preload muted loop playsinline
+          aria-label="video of a rotating blue fish with a round body and bigger longer fins">
+          <source src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/animrenders-compress/fish2-compress.mp4"
+            type="video/mp4">
+        </video>
+      </figure>
+      <img class="overlay fullwidth blcent"
+        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig0-teaser-norenders.webp">
+    </div>
     <p class="graybox">
       <b>LL3M uses a team of large language models to write Python code that creates and edits 3D assets in Blender.</b>
       Given user text instructions, the agents are capable of creating expressive shapes from scratch, and realizing
@@ -88,7 +137,7 @@
       procedural programs and primitives, our method is able to create unconstrained assets with geometry, layout, and
       appearance.
 
-      Enabled by high-level code as a 3D representation, our pipeline is natively a loop of iterative refinement and
+      With high-level code as a 3D representation, our pipeline is natively a loop of iterative refinement and
       co-creation: agents perform automatic code and visual self-critique, and users can provide continuous high-level
       feedback. Further editing avenues are enabled by the clear code and the parameters transparent in the generated
       Blender nodes and structures.
@@ -99,12 +148,23 @@
     <img class="almosthalfwidthflex blcent"
       src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig1-workflow.jpg" alt="process diagram">
     <p class="graybox">
-      <b>Our method includes three phases</b>: initial creation, automatic refinement, and user-guided refinement. The
-      first
-      phase creates an initial shape, where implausible configurations, like a disconnected backrest, are
-      <em>automatically</em> corrected by the second phase. Afterwards, our system can accept additional edit
+      <b>Our method includes three phases</b>: initial creation, automatic refinement, and user-guided refinement.
+      These are conceptual phases in the creation process; each phase involves different agent roles of its own.
+      The first
+      phase creates an initial shape, where implausible configurations, like a disconnected backrest, as well as
+      simplistic geometry are
+      <em>automatically</em> corrected and improved upon by the second phase. Afterwards, our system can accept
+      additional edit
       instructions from the user, allowing for <em>interactive</em> and <em>iterative</em> 3D asset generation.
     </p>
+    <img class="almosthalfwidthflex blcent"
+      src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig3-iterative-final.jpg" alt="">
+    <p class="fullwidth graybox">
+      <b>Generating and refining iteratively</b> is thus the native mode of operation for LL3M.
+      More than just error correction, the pipeline realizes an iterative, coarse-to-fine creation process,
+      involving both automatic and user-guided refinement.
+    </p>
+
   </section>
   <section>
     <h2>Gallery</h2>
@@ -122,23 +182,29 @@
     <img class="almostfullwidth blcent"
       src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig7-diff-in-same-out.jpg" alt="">
     <p class="graybox">
-      <b>Consistent stylization.</b> Starting from different initial meshes produced by LL3M and the same
+      Starting from different initial meshes produced by LL3M and the same
       refinement prompt <em>change the style to steampunk</em> LL3M successfully interprets and applies the same
       style concept to each hat. Each stylized mesh produces distinct variations, including both geometric modifications
       and appearance changes.
     </p>
   </section>
   <section>
+    <h2>Material editing</h2>
+    <img class="halfwidthflex blcent"
+      src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig5-same-in-diff-mat.jpg" <p class="graybox">
+    Given an initial mesh produced by our system, our system is capable of editing the materials on a specific part of
+    the mesh (the blade of the knife), by creating comprehensive procedural materials via shader nodes.
+    </p>
+  </section>
+  <section>
     <h2>Iterative creation</h2>
-    <div class="imgsflex">
-      <img class="almostfullwidth blcent"
-        src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig22-humanoid.jpg" alt="">
-      <p class="fullwidth graybox">
-        <b>Iterative creation.</b> LL3M enables multiple successive edits of the same 3D asset. The
-        modifications are faithful to the user's instructions, editing only the specified element while preserving the
-        character's identity.
-      </p>
-    </div>
+    <img class="almostfullwidth blcent"
+      src="https://people.cs.uchicago.edu/~namanh/remoteassets/ll3m/fig22-humanoid.jpg" alt="">
+    <p class="fullwidth graybox">
+      <b>LL3M enables multiple successive edits of the same 3D asset.</b> The
+      modifications are faithful to the user's instructions, editing only the specified element while preserving the
+      character's identity.
+    </p>
   </section>
   <section>
     <h2>Interpretable code</h2>
@@ -188,6 +254,24 @@
       applied to a parent propagate to its children. Each part in the graph is also assigned a meaningful semantic name.
     </p>
   </section>
+  <script>
+    // upon load, restart and sync the other video in the pair
+    const vidloadsyncers = document.getElementsByClassName("vidloadsync");
+    for (const elem of vidloadsyncers) {
+      const srcshapeVid = elem.getElementsByClassName("srcshape").item(0);
+      const rsltshapeVid = elem.getElementsByClassName("rsltshape").item(0);
+      srcshapeVid?.addEventListener("loadeddata", e => {
+        if (rsltshapeVid) {
+          rsltshapeVid.currentTime = 0;
+        }
+      });
+      rsltshapeVid?.addEventListener("loadeddata", e => {
+        if (srcshapeVid) {
+          srcshapeVid.currentTime = 0;
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
