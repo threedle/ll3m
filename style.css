@@ -220,24 +220,30 @@ video {
 
   }
 
-  .qtrwidthflex {
-    text-align: center;
+  .absparent {
+    position: relative;
 
-    >video.srcshape {
-      width: 42%;
-      z-index: 3;
+    >.abs {
+      position: absolute;
+      top: -25px;
+      width: 100%;
     }
 
-    >video.rsltshape {
-      width: 84%;
+    video {
+      position: absolute;
+      --lmul: 0;
+      --szmul: 1;
+      --voffset: 0px;
+      width: calc(13.2% * var(--szmul));
       z-index: 2;
+      margin-left: -40px;
+      left: calc(10% * var(--lmul));
+      top: calc(var(--voffset));
     }
 
-    >.promptcaption {
-      font-size: var(--promptfontsz);
-      font-style: italic;
-      color: var(--accent);
-      text-align: center;
+    >.overlay {
+      position: relative;
+      z-index: 10;
     }
   }
 }
