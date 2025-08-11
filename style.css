@@ -199,6 +199,7 @@ video {
 
 .teaser {
   --promptfontsz: 1.1rem;
+  margin-top: 20px;
 
   .promptprefix {
     font-size: var(--promptfontsz);
@@ -221,7 +222,12 @@ video {
   }
 
   .absparent {
+    align-self: flex-start;
+    /* overrides align-items: center of .imgsflex */
     position: relative;
+    /* flex: 0 1 33%; */
+    /* width: calc(0.68 * var(--halfwidthflex-w)); */
+    width: calc(0.7 * var(--medwidthflex-w) * var(--eqnwidthmult));
 
     >.abs {
       position: absolute;
@@ -234,16 +240,17 @@ video {
       --lmul: 0;
       --szmul: 1;
       --voffset: 0px;
-      width: calc(13.2% * var(--szmul));
+      width: calc(39.6% * var(--szmul));
       z-index: 2;
-      margin-left: -40px;
-      left: calc(10% * var(--lmul));
+      margin-left: -30px;
+      left: calc(30% * var(--lmul));
       top: calc(var(--voffset));
     }
 
     >.overlay {
       position: relative;
       z-index: 10;
+      width: 100%;
     }
   }
 }
@@ -268,6 +275,10 @@ video {
   gap: 8px;
 }
 
+.flexrowgap {
+  row-gap: 12px;
+}
+
 
 section {
   margin: 4px auto;
@@ -280,7 +291,8 @@ section {
 }
 
 .fullwidth {
-  width: 100%
+  width: 100%;
+  margin: 0 auto;
 }
 
 .almostfullwidth {
