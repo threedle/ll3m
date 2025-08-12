@@ -33,6 +33,10 @@ em {
   color: var(--accent);
 }
 
+pre {
+  overflow-x: scroll
+}
+
 .intro,
 h1,
 h2 {
