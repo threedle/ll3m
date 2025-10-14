@@ -1,0 +1,32 @@
+# LL3M Client Configuration File
+# Blender settings
+blender:
+  headless_rendering: false  # Enable headless mode for scene snapshots and code execution
+  gpu_rendering: false  # Enable GPU rendering (prefers Eevee GPU, falls back to CPU if no GPU)
+
+# Render settings (client-side)
+render:
+  num_images: 5  # Number of images client should render per instruction
+  resolution_scale: 1  # 0..1, 1.0=100%, 0.8=80% 1.0 means full resolution (1920x1080)
+
+########################################################
+# DO NOT EDIT BELOW THIS LINE
+########################################################
+
+# Server settings
+server:
+  url: "https://server.ll3m.org/"  # LL3M cloud server URL 
+
+# Authentication (AWS Cognito) for client PKCE
+cognito:
+  domain: "https://ll3m-cloud-cdx4afx0.auth.us-east-1.amazoncognito.com"
+  client_id: "47ucrpn4bod217lgcqcf3m9jfk"
+  redirect_uri: "http://localhost:8765/callback"
+  logout_redirect_uri: "http://localhost:8765/logout"
+  scopes: ["openid", "email", "phone", "profile"]
+
+# Feedback collection
+feedback:
+  enabled: true
+  google_form_url: "https://forms.gle/Ra5EpcTjBBF1tRdp9"
+  message: "Help us improve LL3M! Share your feedback:"
