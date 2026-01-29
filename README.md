@@ -371,18 +371,3 @@ A: We appreciate your interest in LL3M and value your feedback. Please submit yo
 
 Help us improve LL3M! Share your feedback through our [feedback form](https://forms.gle/Ra5EpcTjBBF1tRdp9).
 
-## BibTeX
-
-If you find LL3M useful for your work, please consider citing:
-
-```bibtex
-@misc{lu2025ll3m,
-      title={LL3M: Large Language 3D Modelers}, 
-      author={Sining Lu and Guan Chen and Nam Anh Dinh and Itai Lang and Ari Holtzman and Rana Hanocka},
-      year={2025},
-      eprint={2508.08228},
-      archivePrefix={arXiv},
-      primaryClass={cs.GR},
-      url={https://arxiv.org/abs/2508.08228}, 
-}
-```
