@@ -1,17 +1,11 @@
-# LL3M: Large Language 3D Modelers
+# LL3M
 
-A demo version of LL3M.
 
-[Sining Lu](https://pawpaw2022.github.io/), [Guan Chen](https://threedle.github.io/ll3m/), [Nam Anh Dinh](https://people.cs.uchicago.edu/~namanh/), [Itai Lang](https://itailang.github.io/), [Ari Holtzman](https://ariholtzman.com/),  [Rana Hanocka](https://people.cs.uchicago.edu/~ranahanocka/)
 
-<span style="position: relative; display: inline-block;">
-  <img src="./assets/uchicago_logo.svg" alt="UChicago Logo" width="230">
-</span> 
 
 <br>
 
 [![Project Page](https://img.shields.io/badge/Project%20Page-online-brightgreen?labelColor=555)](https://threedle.github.io/ll3m/)
-[![arXiv](https://img.shields.io/badge/arXiv-LL3M-ff6961?labelColor=555)](https://arxiv.org/abs/2508.08228)
 
 ![LL3M Teaser](assets/teaser.jpg)
 
